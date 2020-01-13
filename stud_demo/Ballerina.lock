@@ -1,0 +1,19 @@
+org_name = "sisam"
+version = "0.1.0"
+lockfile_version = "1.0.0"
+ballerina_version = "1.1.0"
+
+[[imports."sisam/stud_service:0.1.0"]]
+org_name = "sisam"
+name = "Student_Data"
+version = "0.1.0"
+
+[[imports."sisam/Student_Data:0.1.0"]]
+org_name = "ballerinax"
+name = "java.jdbc"
+version = "0.0.0"
+
+[[imports."ballerinax/java.jdbc:0.0.0"]]
+org_name = "ballerinax"
+name = "java"
+version = "0.0.0"

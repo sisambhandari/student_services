@@ -1,0 +1,213 @@
+2020-01-13 10:40:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "NAME" not found; SQL statement:
+INSERT INTO STUDENT_DETAILS (NIC_NUMBER, NAME, AGE) VALUES (1, 'Alex', 30) [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:1211)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:322)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.ballerinax.jdbc.statement.UpdateStatement.execute(UpdateStatement.java:77)
+	at org.ballerinax.jdbc.methods.ExternActions.nativeUpdate(ExternActions.java:70)
+	at ballerinax.java_jdbc.client.nativeUpdate(client.bal:126)
+	at ballerinax.java_jdbc.$value$Client.update(client.bal:69)
+	at ballerinax.java_jdbc.$value$Client.call(client.bal)
+	at main.main(main.bal:67)
+	at ___init.$lambda$main$(.)
+	at org.ballerinalang.jvm.scheduling.SchedulerItem.execute(Scheduler.java:426)
+	at org.ballerinalang.jvm.scheduling.Scheduler.run(Scheduler.java:218)
+	at org.ballerinalang.jvm.scheduling.Scheduler.runSafely(Scheduler.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-13 10:40:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setLong(JdbcPreparedStatement.java:666)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setLong(HikariProxyPreparedStatement.java)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setBigIntValue(ProcessedStatement.java:541)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:205)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:159)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.prepare(ProcessedStatement.java:145)
+	at org.ballerinax.jdbc.statement.SelectStatement.execute(SelectStatement.java:75)
+	at org.ballerinax.jdbc.methods.ExternActions.nativeSelect(ExternActions.java:63)
+	at ballerinax.java_jdbc.client.nativeSelect(client.bal:116)
+	at ballerinax.java_jdbc.$value$Client.select(client.bal:55)
+	at ballerinax.java_jdbc.$value$Client.call(client.bal)
+	at main.main(main.bal:74)
+	at ___init.$lambda$main$(.)
+	at org.ballerinalang.jvm.scheduling.SchedulerItem.execute(Scheduler.java:426)
+	at org.ballerinalang.jvm.scheduling.Scheduler.run(Scheduler.java:218)
+	at org.ballerinalang.jvm.scheduling.Scheduler.runSafely(Scheduler.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-13 10:41:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (NAME_WITH_INITIALS VARCHAR(30), FULL_NAME VARCHAR(30), RELIGION VARCHAR(30), ETHNICITY VARCHAR(30), DATE_OF_BIRTH INTEGER, GRADE_AND_CLASS VARCHAR(30), GENDER VARCHAR(30), NIC_NUMBER INTEGER, ADDRESS VARCHAR(100), BIRTH_DISTRICT VARCHAR(30), BIRTH_REGISTRAR_DIVISION VARCHAR(30), BIRTH_CERTIFICATE_NO INTEGER, SPECIAL_NEED_DIFFICULTY VARCHAR(30)) [42101-199]
+2020-01-13 10:41:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "AGE" not found; SQL statement:
+INSERT INTO STUDENT_DETAILS (NIC_NUMBER, FULL_NAME, AGE) VALUES (1, 'Alex', 30) [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:1211)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:322)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.ballerinax.jdbc.statement.UpdateStatement.execute(UpdateStatement.java:77)
+	at org.ballerinax.jdbc.methods.ExternActions.nativeUpdate(ExternActions.java:70)
+	at ballerinax.java_jdbc.client.nativeUpdate(client.bal:126)
+	at ballerinax.java_jdbc.$value$Client.update(client.bal:69)
+	at ballerinax.java_jdbc.$value$Client.call(client.bal)
+	at main.main(main.bal:67)
+	at ___init.$lambda$main$(.)
+	at org.ballerinalang.jvm.scheduling.SchedulerItem.execute(Scheduler.java:426)
+	at org.ballerinalang.jvm.scheduling.Scheduler.run(Scheduler.java:218)
+	at org.ballerinalang.jvm.scheduling.Scheduler.runSafely(Scheduler.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-13 10:41:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setLong(JdbcPreparedStatement.java:666)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setLong(HikariProxyPreparedStatement.java)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setBigIntValue(ProcessedStatement.java:541)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:205)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:159)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.prepare(ProcessedStatement.java:145)
+	at org.ballerinax.jdbc.statement.SelectStatement.execute(SelectStatement.java:75)
+	at org.ballerinax.jdbc.methods.ExternActions.nativeSelect(ExternActions.java:63)
+	at ballerinax.java_jdbc.client.nativeSelect(client.bal:116)
+	at ballerinax.java_jdbc.$value$Client.select(client.bal:55)
+	at ballerinax.java_jdbc.$value$Client.call(client.bal)
+	at main.main(main.bal:74)
+	at ___init.$lambda$main$(.)
+	at org.ballerinalang.jvm.scheduling.SchedulerItem.execute(Scheduler.java:426)
+	at org.ballerinalang.jvm.scheduling.Scheduler.run(Scheduler.java:218)
+	at org.ballerinalang.jvm.scheduling.Scheduler.runSafely(Scheduler.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-13 10:42:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (NAME_WITH_INITIALS VARCHAR(30), FULL_NAME VARCHAR(30), RELIGION VARCHAR(30), ETHNICITY VARCHAR(30), DATE_OF_BIRTH INTEGER, GRADE_AND_CLASS VARCHAR(30), GENDER VARCHAR(30), NIC_NUMBER INTEGER, ADDRESS VARCHAR(100), BIRTH_DISTRICT VARCHAR(30), BIRTH_REGISTRAR_DIVISION VARCHAR(30), BIRTH_CERTIFICATE_NO INTEGER, SPECIAL_NEED_DIFFICULTY VARCHAR(30)) [42101-199]
+2020-01-13 10:42:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setLong(JdbcPreparedStatement.java:666)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setLong(HikariProxyPreparedStatement.java)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setBigIntValue(ProcessedStatement.java:541)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:205)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.setParameter(ProcessedStatement.java:159)
+	at org.ballerinax.jdbc.statement.ProcessedStatement.prepare(ProcessedStatement.java:145)
+	at org.ballerinax.jdbc.statement.SelectStatement.execute(SelectStatement.java:75)
+	at org.ballerinax.jdbc.methods.ExternActions.nativeSelect(ExternActions.java:63)
+	at ballerinax.java_jdbc.client.nativeSelect(client.bal:116)
+	at ballerinax.java_jdbc.$value$Client.select(client.bal:55)
+	at ballerinax.java_jdbc.$value$Client.call(client.bal)
+	at main.main(main.bal:74)
+	at ___init.$lambda$main$(.)
+	at org.ballerinalang.jvm.scheduling.SchedulerItem.execute(Scheduler.java:426)
+	at org.ballerinalang.jvm.scheduling.Scheduler.run(Scheduler.java:218)
+	at org.ballerinalang.jvm.scheduling.Scheduler.runSafely(Scheduler.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-13 11:56:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (NAME_WITH_INITIALS VARCHAR(30), FULL_NAME VARCHAR(30), RELIGION VARCHAR(30), ETHNICITY VARCHAR(30), DATE_OF_BIRTH INTEGER, GRADE_AND_CLASS VARCHAR(30), GENDER VARCHAR(30), NIC_NUMBER INTEGER, ADDRESS VARCHAR(100), BIRTH_DISTRICT VARCHAR(30), BIRTH_REGISTRAR_DIVISION VARCHAR(30), BIRTH_CERTIFICATE_NO INTEGER, SPECIAL_NEED_DIFFICULTY VARCHAR(30)) [42101-199]
+2020-01-13 11:56:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMER" not found; SQL statement:
+SELECT id,full_name FROM CUSTOMER WHERE nic_number < ?? [42102-199]
+2020-01-13 13:31:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (FULLNAME VARCHAR(30), NAME_WITH_INITIALS VARCHAR(30)) [42101-199]
+2020-01-13 13:34:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (FULLNAME VARCHAR(30), NAME_WITH_INITIALS VARCHAR(30)) [42101-199]
+2020-01-13 13:34:07 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/Sisam/Desktop/stud_demo/src/Student_Data/db_files/demodb.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:727)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:713)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/Sisam/Desktop/stud_demo/src/Student_Data/db_files/demodb.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/Sisam/Desktop/stud_demo/src/Student_Data/db_files/demodb.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
+	... 27 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at sun.nio.ch.SharedFileLockTable.checkList(FileLockTable.java:255)
+	at sun.nio.ch.SharedFileLockTable.add(FileLockTable.java:152)
+	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1107)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 28 more
+2020-01-13 13:34:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT_DETAILS" already exists; SQL statement:
+CREATE TABLE STUDENT_DETAILS (FULLNAME VARCHAR(30), NAME_WITH_INITIALS VARCHAR(30)) [42101-199]
